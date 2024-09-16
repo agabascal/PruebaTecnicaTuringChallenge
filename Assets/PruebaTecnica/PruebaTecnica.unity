@@ -590,7 +590,7 @@ MonoBehaviour:
   m_MatchOrientation: 0
   m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
-  m_FilterSelectionByHitNormal: 0
+  m_FilterSelectionByHitNormal: 1
   m_UpNormalToleranceDegrees: 30
   m_Teleporting:
     m_PersistentCalls:
@@ -688,6 +688,14 @@ PrefabInstance:
     - target: {fileID: 83033975040709859, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569654610711086024, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885791556586639310, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_LineType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5692239289302061138, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_Name
