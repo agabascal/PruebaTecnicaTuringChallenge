@@ -4,14 +4,18 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> inventorySlotsUI;
-    [SerializeField] private GameObject trashPrefab; // Prefab de la "basura"
+    [SerializeField] private List<UIItem> inventorySlotsUI;
+    [SerializeField] private Transform itemImageContainer;
+    [SerializeField] private GameObject trashPrefab;
 
     private List<GameObject> items = new List<GameObject>();
     public static Inventory Instance { get; private set; }
 
     private void Awake()
     {
+        inventorySlotsUI = new List<UIItem>();
+        inventorySlotsUI.AddRange(itemImageContainer.GetComponentsInChildren<UIItem>());
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -25,7 +29,7 @@ public class Inventory : MonoBehaviour
 
     public void AddToInventory(GameObject item)
     {
-        if (items.Count < inventorySlotsUI.Count)
+        if (items.Count < inventorySlotsUI.Count && !items.Contains(item))
         {
             items.Add(item);
             item.SetActive(false);
@@ -38,14 +42,16 @@ public class Inventory : MonoBehaviour
         if (slotIndex < items.Count)
         {
             GameObject item = items[slotIndex];
-            item.GetComponent<InventoryItem>().UseItem();
+            item.GetComponent<Item>().UseItem();
+
             Debug.Log("Used Object: " + item.name);
 
-            GameObject trashItem = Instantiate(trashPrefab);
-            trashItem.SetActive(false); 
-            items[slotIndex] = trashItem; 
+            var newTrash = Instantiate(trashPrefab);
+            items[slotIndex] = newTrash;
+            newTrash.SetActive(false);
 
             UpdateInventoryUI();
+            inventorySlotsUI[slotIndex].SetupItemAsTrash(true); 
         }
     }
 
@@ -53,9 +59,12 @@ public class Inventory : MonoBehaviour
     {
         if (slotIndex < items.Count)
         {
-            GameObject item = items[slotIndex];
-            item.GetComponent<InventoryItem>().RemoveItem();
-            Debug.Log("Removed Object: " + item.name);
+            Item item = items[slotIndex].GetComponent<Item>();
+            if (item != null)
+            {
+                item.GetComponent<Item>().RemoveItem();
+                Debug.Log("Removed Object: " + item.name);
+            }
             items.RemoveAt(slotIndex);
             UpdateInventoryUI();
         }
@@ -67,8 +76,20 @@ public class Inventory : MonoBehaviour
         {
             if (i < items.Count)
             {
-                inventorySlotsUI[i].GetComponent<Image>().color = items[i].GetComponent<InventoryItem>().ItemColor;
-                inventorySlotsUI[i].GetComponent<Button>().interactable = true;
+                var item = items[i].GetComponent<Item>();
+
+                if (item != null)
+                {
+                    inventorySlotsUI[i].GetComponent<Image>().color = item.ItemColor;
+                    inventorySlotsUI[i].GetComponent<Button>().interactable = true;
+                    inventorySlotsUI[i].GetComponent<UIItem>().SetupItemAsTrash(false);
+                }
+                else
+                {
+                    inventorySlotsUI[i].GetComponent<Image>().color = Color.magenta;
+                    inventorySlotsUI[i].GetComponent<Button>().interactable = true;
+                    inventorySlotsUI[i].GetComponent<UIItem>().SetupItemAsTrash(true);
+                }
             }
             else
             {

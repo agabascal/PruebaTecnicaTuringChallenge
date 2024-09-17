@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class InventoryItem : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public UnityEvent ItemUsed;
     [SerializeField] private Color itemColor;
@@ -11,14 +11,17 @@ public class InventoryItem : MonoBehaviour
     public Color ItemColor => itemColor;
 
     private XRGrabInteractable grabInteractable;
+    private Vector3 startPos;
 
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
+        startPos = transform.position;
     }
 
     private void OnEnable()
     {
+        transform.position = startPos;
         grabInteractable.selectEntered.AddListener(OnSelectEnter);
     }
 

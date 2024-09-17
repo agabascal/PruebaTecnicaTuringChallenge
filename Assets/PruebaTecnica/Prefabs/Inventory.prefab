@@ -416,7 +416,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2102719093659830737}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -564,6 +564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 1407484422709614216}
+  useButton: {fileID: 7078893708428710786}
+  discardButton: {fileID: 6110937053587474114}
 --- !u!1 &1184936454925532085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1029,7 @@ MonoBehaviour:
   - {fileID: 857093211451769057}
   - {fileID: 5418327049962416714}
   - {fileID: 4480033117769824321}
+  itemImageContainer: {fileID: 610598685337899425}
   trashPrefab: {fileID: 6894040986934156267, guid: 33d002f4d7bfdf9489852783078bd284, type: 3}
 --- !u!1 &2376291853567687486
 GameObject:
@@ -1064,9 +1067,9 @@ RectTransform:
   - {fileID: 3702420302878532324}
   m_Father: {fileID: 8376143935806985647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.050655, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2537482037662857899
@@ -1801,6 +1804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 2102719093659830737}
+  useButton: {fileID: 6983470508458589099}
+  discardButton: {fileID: 4985800882688921357}
 --- !u!1 &4985800882688921357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,9 +1842,9 @@ RectTransform:
   - {fileID: 9208547306714628477}
   m_Father: {fileID: 1726955452438789584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.15196499, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4902810725347712779
@@ -1931,7 +1936,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2219,7 +2224,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2102719093659830737}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2367,6 +2372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 2773946448898661712}
+  useButton: {fileID: 2376291853567687486}
+  discardButton: {fileID: 5922470990562084555}
 --- !u!1 &5922470990562084555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,9 +2410,9 @@ RectTransform:
   - {fileID: 6246889350747003479}
   m_Father: {fileID: 8376143935806985647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.15196499, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3792593721967952804
@@ -2673,9 +2680,9 @@ RectTransform:
   - {fileID: 6463742454016513902}
   m_Father: {fileID: 473374109765183700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.15, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4846662687406013493
@@ -3244,9 +3251,9 @@ RectTransform:
   - {fileID: 2174719449076195386}
   m_Father: {fileID: 1726955452438789584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.050655, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2599944495886460660
@@ -3338,7 +3345,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3514,9 +3521,9 @@ RectTransform:
   - {fileID: 899035156411235234}
   m_Father: {fileID: 473374109765183700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.05, y: -0.05}
   m_SizeDelta: {x: 0.1, y: 0.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1615893122523981687
