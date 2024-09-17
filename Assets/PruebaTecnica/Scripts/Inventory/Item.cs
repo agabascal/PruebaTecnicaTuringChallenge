@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -22,7 +23,6 @@ public class Item : MonoBehaviour, IInventoryItem
 
     private void OnEnable()
     {
-        transform.position = startPos;
         grabInteractable.selectEntered.AddListener(OnSelectEnter);
     }
 
@@ -34,17 +34,23 @@ public class Item : MonoBehaviour, IInventoryItem
     private void OnSelectEnter(SelectEnterEventArgs _)
     {
         Inventory.Instance.AddToInventory(this);
-        gameObject.SetActive(false);
     }
 
     public void UseItem()
     {
         ItemUsed?.Invoke();
         this.gameObject.SetActive(true);
+        ResetPosition();
     }
 
     public void RemoveItem()
     {
         this.gameObject.SetActive(true);
+        ResetPosition();
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = startPos;
     }
 }

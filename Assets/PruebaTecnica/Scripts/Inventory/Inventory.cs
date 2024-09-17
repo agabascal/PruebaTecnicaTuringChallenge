@@ -7,6 +7,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] private List<UIItem> inventorySlotsUI;
     [SerializeField] private Transform itemImageContainer;
     [SerializeField] private GameObject trashPrefab;
+    [SerializeField] private AudioClip pickupSFX;
+    [SerializeField] private AudioClip itemRejectedSFX;
 
     private List<IInventoryItem> items = new List<IInventoryItem>();
 
@@ -40,7 +42,15 @@ public class Inventory : MonoBehaviour
         if (items.Count < inventorySlotsUI.Count && !items.Contains(item))
         {
             items.Add(item);
+            item.gameObject.SetActive(false);
+            audioSource.clip = pickupSFX;
+            audioSource.Play();
             UpdateInventoryUI();
+        }
+        else
+        {
+            audioSource.clip = itemRejectedSFX;
+            audioSource.Play();
         }
     }
 
