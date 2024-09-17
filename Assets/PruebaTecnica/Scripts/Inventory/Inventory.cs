@@ -8,16 +8,13 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Transform itemImageContainer;
     [SerializeField] private GameObject trashPrefab;
     [SerializeField] private AudioClip pickupSFX;
-    [SerializeField] private AudioClip itemRejectedSFX;
+    [SerializeField] private AudioClip inventoryFullSFX;
 
     private List<IInventoryItem> items = new List<IInventoryItem>();
-
-    private AudioSource audioSource;
     public static Inventory Instance { get; private set; }
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         InitializeInventorySlots();
 
         if (Instance != null && Instance != this)
@@ -43,14 +40,12 @@ public class Inventory : MonoBehaviour
         {
             items.Add(item);
             item.gameObject.SetActive(false);
-            audioSource.clip = pickupSFX;
-            audioSource.Play();
+            SFXManager.Instance.PlayClip(pickupSFX);
             UpdateInventoryUI();
         }
         else
         {
-            audioSource.clip = itemRejectedSFX;
-            audioSource.Play();
+            SFXManager.Instance.PlayClip(inventoryFullSFX);
         }
     }
 
@@ -61,8 +56,6 @@ public class Inventory : MonoBehaviour
             IInventoryItem item = items[slotIndex];
             item.UseItem();
             Debug.Log("Used Object: " + item.GetType().Name);
-            audioSource.clip = item.ItemSFX;
-            audioSource.Play();
             CreateTrashInSlot(slotIndex);
         }
     }

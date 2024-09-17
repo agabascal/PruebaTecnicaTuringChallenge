@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 15
+  sfx: {fileID: 8300000, guid: 431da3b9cc3c4b44aaa496cb885a8645, type: 3}

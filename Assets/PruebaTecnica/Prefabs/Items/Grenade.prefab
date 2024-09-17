@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: -20
+  sfx: {fileID: 8300000, guid: 9d899d54f5b9ce742b2351ff1e5c26f9, type: 3}

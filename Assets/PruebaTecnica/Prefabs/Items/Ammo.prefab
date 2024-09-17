@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmount: 2
+  sfx: {fileID: 8300000, guid: de115f1cc600ab843b7866b2b76fd07f, type: 3}
