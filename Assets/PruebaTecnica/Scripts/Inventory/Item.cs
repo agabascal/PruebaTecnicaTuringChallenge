@@ -34,4 +34,9 @@ public class InventoryItem : MonoBehaviour
         ItemUsed?.Invoke();
         this.gameObject.SetActive(true);
     }
+
+    internal void RemoveItem()
+    {
+        this.gameObject.SetActive(true);
+    }
 }
