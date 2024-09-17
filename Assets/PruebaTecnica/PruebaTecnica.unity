@@ -592,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 554693285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70640004, y: 1.393, z: 2.8695}
+  m_LocalPosition: {x: 0.76, y: 1.393, z: 2.8695}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1205363408}
   - component: {fileID: 1205363415}
   m_Layer: 0
-  m_Name: GrabInteractable (2)
+  m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1893,6 +1893,10 @@ PrefabInstance:
     - target: {fileID: 5692239289302061138, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679712074259476300, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -247.10303
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
