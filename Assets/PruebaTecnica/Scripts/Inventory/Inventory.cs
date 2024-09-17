@@ -9,10 +9,13 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject trashPrefab;
 
     private List<IInventoryItem> items = new List<IInventoryItem>();
+
+    private AudioSource audioSource;
     public static Inventory Instance { get; private set; }
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         InitializeInventorySlots();
 
         if (Instance != null && Instance != this)
@@ -48,7 +51,8 @@ public class Inventory : MonoBehaviour
             IInventoryItem item = items[slotIndex];
             item.UseItem();
             Debug.Log("Used Object: " + item.GetType().Name);
-
+            audioSource.clip = item.ItemSFX;
+            audioSource.Play();
             CreateTrashInSlot(slotIndex);
         }
     }
@@ -91,7 +95,7 @@ public class Inventory : MonoBehaviour
     private void UpdateSlot(int slotIndex, IInventoryItem item)
     {
         var slotUI = inventorySlotsUI[slotIndex];
-        slotUI.GetComponent<Image>().color = item.ItemColor;
+        slotUI.GetComponent<Image>().sprite = item.ItemSprite;
         slotUI.GetComponent<Button>().interactable = true;
         slotUI.SetupItemAsTrash(item is TrashItem);
     }
@@ -99,7 +103,7 @@ public class Inventory : MonoBehaviour
     private void ClearSlot(int slotIndex)
     {
         var slotUI = inventorySlotsUI[slotIndex];
-        slotUI.GetComponent<Image>().color = Color.grey;
+        slotUI.GetComponent<Image>().sprite = null;
         slotUI.GetComponent<Button>().interactable = false;
     }
 }

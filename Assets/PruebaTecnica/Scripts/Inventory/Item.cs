@@ -5,10 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Item : MonoBehaviour, IInventoryItem
 {
     public UnityEvent ItemUsed;
-    [SerializeField] private Color itemColor;
     [SerializeField] private Sprite itemSprite;
+    [SerializeField] private AudioClip sfx;
+    public Sprite ItemSprite => itemSprite;
 
-    public Color ItemColor => itemColor;
+    public AudioClip ItemSFX => sfx;
 
     private XRGrabInteractable grabInteractable;
     private Vector3 startPos;

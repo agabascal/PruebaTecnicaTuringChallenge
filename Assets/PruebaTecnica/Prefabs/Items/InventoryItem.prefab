@@ -372,4 +372,5 @@ MonoBehaviour:
   ItemUsed:
     m_PersistentCalls:
       m_Calls: []
-  itemColor: {r: 0.2691916, g: 0.9433962, b: 0.06674972, a: 1}
+  itemSprite: {fileID: 0}
+  sfx: {fileID: 0}

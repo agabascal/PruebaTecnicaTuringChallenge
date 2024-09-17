@@ -2,7 +2,8 @@
 
 public interface IInventoryItem
 {
-    public Color ItemColor { get; }
+    public Sprite ItemSprite{ get; }
+    public AudioClip ItemSFX{ get; }
     public void UseItem();
     public void RemoveItem();
 }
