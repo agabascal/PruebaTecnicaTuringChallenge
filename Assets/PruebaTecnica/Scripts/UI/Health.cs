@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private Image fillImage;
     [SerializeField] private float startHealth = 50f;
+    [SerializeField] private ParticleSystem healPSystem;
+    [SerializeField] private ParticleSystem damagePSystem;
 
     private float currentHealth;
 
@@ -17,25 +19,27 @@ public class Health : MonoBehaviour
 
     private void OnEnable()
     {
-        Potion.Grabbed += OnPotionUsed;
-        Grenade.GrenadeUsed += OnGrenadeGrabbed;
+        Potion.Grabbed += OnHealed;
+        Grenade.GrenadeUsed += OnDamaged;
     }
 
     private void OnDisable()
     {
-        Potion.Grabbed -= OnPotionUsed;
-        Grenade.GrenadeUsed -= OnGrenadeGrabbed;
+        Potion.Grabbed -= OnHealed;
+        Grenade.GrenadeUsed -= OnDamaged;
     }
 
-    private void OnPotionUsed(float healAmount)
+    private void OnHealed(float healAmount)
     {
         currentHealth = Mathf.Clamp01(currentHealth + (healAmount / 100f));
+        healPSystem?.gameObject.SetActive(true);
         UpdateHealthUI(false);
     }
 
-    private void OnGrenadeGrabbed(float damageAmount)
+    private void OnDamaged(float damageAmount)
     {
         currentHealth = Mathf.Clamp01(currentHealth + (damageAmount / 100f));
+        damagePSystem?.gameObject.SetActive(true);
         UpdateHealthUI(true);
     }
 
