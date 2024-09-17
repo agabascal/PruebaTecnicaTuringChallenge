@@ -50,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3553563571486969826, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: itemColor.b
-      value: 0.03769135
+      value: 0.48235294
       objectReference: {fileID: 0}
     - target: {fileID: 3553563571486969826, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: itemColor.g
-      value: 0.49935576
+      value: 0.48235294
       objectReference: {fileID: 0}
     - target: {fileID: 3553563571486969826, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: itemColor.r
-      value: 0.7264151
+      value: 0.48235294
       objectReference: {fileID: 0}
     - target: {fileID: 3553563571486969826, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: ItemUsed.m_PersistentCalls.m_Calls.Array.size
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: ItemUsed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53d7e50421b9b644f806a383267ecd71, type: 2}
     - target: {fileID: 8756692857163195031, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: m_Name
       value: Ammo
