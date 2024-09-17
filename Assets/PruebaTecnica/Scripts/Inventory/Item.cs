@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Item : MonoBehaviour, IInventoryItem
 {
     public UnityEvent ItemUsed;
+
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private AudioClip sfx;
     public Sprite ItemSprite => itemSprite;

@@ -1,16 +1,27 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    public static event Action<float> GrenadeUsed;
-    public static event Action<int> DecreaseAmmo;
-
     [SerializeField] private float damageAmount = -20;
+    private AmmoHUD ammoHUD;
+
+    private void Awake()
+    {
+        ammoHUD = FindObjectOfType<AmmoHUD>();
+    }
     public void OnGrenadeUsed()
     {
-        Debug.Log("Grenade Used, damaged for: " + damageAmount);
-        GrenadeUsed?.Invoke(damageAmount);
-        DecreaseAmmo?.Invoke(-1);
+        if (ammoHUD.CurrentAmmo > 0)
+        {
+
+
+            Debug.Log("Grenade Used, damaged for: " + damageAmount);
+            EventManager.OnDamageTaken(damageAmount);
+            EventManager.OnAmmoChanged(-1);
+        }
+        else
+        {
+            Debug.Log("No Ammo left");
+        }
     }
 }

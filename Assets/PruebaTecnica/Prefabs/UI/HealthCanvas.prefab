@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8541065406829935614}
   - component: {fileID: 3696890979446823216}
   - component: {fileID: 5238297281107074022}
-  - component: {fileID: 2109163204027713633}
+  - component: {fileID: 1101200861112092322}
   m_Layer: 5
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2109163204027713633
+--- !u!114 &1101200861112092322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,13 +188,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6491443912426001909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475f798369a59c74f8e6bfc4179fee40, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f5e9a5c7e3d7254290b54b9119ab062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillImage: {fileID: 4354233276523717025}
-  startHealth: 50
-  healPSystem: {fileID: 0}
-  damagePSystem: {fileID: 2183387866715304287, guid: 50103ef13fd17c1459e6d1f959ee836b, type: 3}
 --- !u!1 &6925959503718254042
 GameObject:
   m_ObjectHideFlags: 0

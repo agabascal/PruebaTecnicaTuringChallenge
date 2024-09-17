@@ -9,6 +9,8 @@ public class AmmoHUD : MonoBehaviour
 
     private int currentAmmo;
 
+    public int CurrentAmmo => currentAmmo;
+
     private void Awake()
     {
         currentAmmo = startingAmmo;
@@ -17,14 +19,12 @@ public class AmmoHUD : MonoBehaviour
 
     private void OnEnable()
     {
-        Ammo.AmmoObtained += UpdateAmmo;
-        Grenade.DecreaseAmmo += UpdateAmmo;
+        EventManager.OnAmmoChanged += UpdateAmmo;
     }
 
     private void OnDisable()
     {
-        Ammo.AmmoObtained -= UpdateAmmo;
-        Grenade.DecreaseAmmo -= UpdateAmmo;
+        EventManager.OnAmmoChanged -= UpdateAmmo;
     }
 
     private void UpdateAmmo(int ammo)
