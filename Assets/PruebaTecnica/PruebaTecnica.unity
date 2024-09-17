@@ -1125,21 +1125,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2682670106805105853, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2954953441818650836, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954953441818650836, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954953441818650836, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.050575003
       objectReference: {fileID: 0}
     - target: {fileID: 2954953441818650836, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3819420437733945231, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1241,6 +1245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5788796574512770088, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: trashPrefab
+      value: 
+      objectReference: {fileID: 6894040986934156267, guid: 33d002f4d7bfdf9489852783078bd284, type: 3}
     - target: {fileID: 6325109373479179986, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

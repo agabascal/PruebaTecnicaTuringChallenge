@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class Inventory: MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     [SerializeField] public List<GameObject> inventorySlotsUI;
+    [SerializeField] private GameObject trashPrefab; // Prefab de la "basura"
 
     private List<GameObject> items = new List<GameObject>();
     public static Inventory Instance { get; private set; }
@@ -21,6 +22,7 @@ public class Inventory: MonoBehaviour
         }
         UpdateInventoryUI();
     }
+
     public void AddToInventory(GameObject item)
     {
         if (items.Count < inventorySlotsUI.Count)
@@ -38,7 +40,11 @@ public class Inventory: MonoBehaviour
             GameObject item = items[slotIndex];
             item.GetComponent<InventoryItem>().UseItem();
             Debug.Log("Used Object: " + item.name);
-            items.RemoveAt(slotIndex);
+
+            GameObject trashItem = Instantiate(trashPrefab);
+            trashItem.SetActive(false); 
+            items[slotIndex] = trashItem; 
+
             UpdateInventoryUI();
         }
     }
