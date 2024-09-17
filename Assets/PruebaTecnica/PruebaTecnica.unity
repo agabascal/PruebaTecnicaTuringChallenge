@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 554693286}
   - component: {fileID: 554693293}
   - component: {fileID: 554693294}
+  - component: {fileID: 554693295}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -625,6 +626,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: -20
+--- !u!114 &554693295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554693285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  itemColor: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
 --- !u!1 &859694147
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +723,8 @@ GameObject:
   - component: {fileID: 1205363409}
   - component: {fileID: 1205363408}
   - component: {fileID: 1205363415}
+  - component: {fileID: 1205363416}
+  - component: {fileID: 1205363417}
   m_Layer: 0
   m_Name: Ammo
   m_TagString: Untagged
@@ -1014,6 +1033,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yOffset: 0.15
+--- !u!114 &1205363416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205363407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1205363417}
+        m_TargetAssemblyTypeName: Ammo, Assembly-CSharp
+        m_MethodName: OnAmmoUsed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  itemColor: {r: 0.5471698, g: 0.3991278, b: 0.04387683, a: 1}
+--- !u!114 &1205363417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205363407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6850b12c505f14dab6c7f815e6acef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 2
 --- !u!1 &1335703906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1227,7 @@ GameObject:
   - component: {fileID: 1494626151}
   - component: {fileID: 1494626158}
   - component: {fileID: 1494626159}
+  - component: {fileID: 1494626160}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -1489,6 +1550,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yOffset: 0.15
+--- !u!114 &1494626160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494626150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemUsed:
+    m_PersistentCalls:
+      m_Calls: []
+  itemColor: {r: 0.2691916, g: 0.9433962, b: 0.06674972, a: 1}
 --- !u!1001 &1557372116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1890,6 +1967,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 207948304125975642, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 207948304125975642, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 207948304125975642, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 207948304125975642, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737010851644619709, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737010851644619709, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737010851644619709, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737010851644619709, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692239289302061138, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1897,6 +2006,22 @@ PrefabInstance:
     - target: {fileID: 7679712074259476300, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -247.10303
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827200866991550924, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827200866991550924, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827200866991550924, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827200866991550924, guid: a940168986e3ca346a7f720da22dc97d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

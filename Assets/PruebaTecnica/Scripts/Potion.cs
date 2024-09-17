@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class Potion : MonoBehaviour
 {
@@ -8,24 +7,7 @@ public class Potion : MonoBehaviour
 
     [SerializeField] private float healAmount = 15;
 
-    private XRGrabInteractable interactable;
-
-    private void Awake()
-    {
-        interactable = GetComponent<XRGrabInteractable>();
-    }
-
-    private void OnEnable()
-    {
-        interactable.selectEntered.AddListener(OnPotionGrabbed);
-    }
-
-    private void OnDisable()
-    {
-        interactable.selectEntered.RemoveListener(OnPotionGrabbed);
-    }
-
-    private void OnPotionGrabbed(SelectEnterEventArgs _)
+    public void OnPotionUsed()
     {
         Debug.Log("Potion Grabbed " + healAmount);
         Grabbed?.Invoke(healAmount);

@@ -31,9 +31,9 @@ public class InteractableHoverAndRotate : MonoBehaviour
         interactable.selectExited.RemoveListener(OnSelectExit);
     }
 
-    private void OnSelectExit(SelectExitEventArgs arg0) => StartAnimation();
+    private void OnSelectExit(SelectExitEventArgs _) => StartAnimation();
 
-    private void OnSelectEnter(SelectEnterEventArgs arg0) => StopAnimation();
+    private void OnSelectEnter(SelectEnterEventArgs _) => StopAnimation();
 
     private void StartAnimation()
     {
@@ -43,7 +43,7 @@ public class InteractableHoverAndRotate : MonoBehaviour
 
     private void StopAnimation()
     {
-        DOTween.KillAll();
+        DOTween.Kill(transform);
     }
 
 }
