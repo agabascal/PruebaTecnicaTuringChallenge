@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/PruebaTecnica/PruebaTecnica.unity
+    guid: 618a46ac31e93e746a960ba6b37ae16b
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63f0d087f5f3a194c8a6e2a8166dc697, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4ed0ee7219be91949a5e2489651e8b6a, type: 2}
