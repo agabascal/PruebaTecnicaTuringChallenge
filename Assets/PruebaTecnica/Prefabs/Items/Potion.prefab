@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 454448367830364453, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5757432604628902232, guid: 55db442f4a25dff468ddd7ca59e5bd24, type: 3}
     - target: {fileID: 883776431143727699, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.052
@@ -96,6 +100,26 @@ PrefabInstance:
       propertyPath: ItemUsed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6286906018029681636, guid: 55db442f4a25dff468ddd7ca59e5bd24, type: 3}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -6748072989193729204, guid: 55db442f4a25dff468ddd7ca59e5bd24, type: 3}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: -8182671788248064298, guid: 55db442f4a25dff468ddd7ca59e5bd24, type: 3}
+    - target: {fileID: 8031843805025918325, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: -8182671788248064298, guid: 55db442f4a25dff468ddd7ca59e5bd24, type: 3}
     - target: {fileID: 8756692857163195031, guid: 07e736894d26a814c8e7c9373fc5ef9a, type: 3}
       propertyPath: m_Name
       value: Potion

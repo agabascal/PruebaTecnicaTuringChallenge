@@ -14,11 +14,13 @@ public class Item : MonoBehaviour, IInventoryItem
 
     private XRGrabInteractable grabInteractable;
     private Vector3 startPos;
+    private Quaternion startRotation;
 
     private void Awake()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         startPos = transform.position;
+        startRotation = transform.rotation;
     }
 
     private void OnEnable()
@@ -40,17 +42,18 @@ public class Item : MonoBehaviour, IInventoryItem
     {
         ItemUsed?.Invoke();
         this.gameObject.SetActive(true);
-        ResetPosition();
+        ResetTransform();
     }
 
     public void RemoveItem()
     {
         this.gameObject.SetActive(true);
-        ResetPosition();
+        ResetTransform();
     }
 
-    private void ResetPosition()
+    private void ResetTransform()
     {
         transform.position = startPos;
+        transform.rotation = startRotation;
     }
 }
