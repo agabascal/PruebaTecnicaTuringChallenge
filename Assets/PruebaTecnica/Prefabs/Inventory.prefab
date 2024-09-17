@@ -1026,9 +1026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySlotsUI:
-  - {fileID: 857093211451769057}
-  - {fileID: 5418327049962416714}
-  - {fileID: 4480033117769824321}
+  - {fileID: 4771080385973500975}
+  - {fileID: 6435845876130431756}
+  - {fileID: 4745342153335384912}
   itemImageContainer: {fileID: 610598685337899425}
   trashPrefab: {fileID: 6894040986934156267, guid: 33d002f4d7bfdf9489852783078bd284, type: 3}
 --- !u!1 &2376291853567687486

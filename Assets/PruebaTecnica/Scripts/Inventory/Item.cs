@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IInventoryItem
 {
     public UnityEvent ItemUsed;
     [SerializeField] private Color itemColor;
@@ -30,7 +30,11 @@ public class Item : MonoBehaviour
         grabInteractable.selectEntered.RemoveListener(OnSelectEnter);
     }
 
-    private void OnSelectEnter(SelectEnterEventArgs _) => Inventory.Instance.AddToInventory(gameObject);
+    private void OnSelectEnter(SelectEnterEventArgs _)
+    {
+        Inventory.Instance.AddToInventory(this);
+        gameObject.SetActive(false);
+    }
 
     public void UseItem()
     {
@@ -38,7 +42,7 @@ public class Item : MonoBehaviour
         this.gameObject.SetActive(true);
     }
 
-    internal void RemoveItem()
+    public void RemoveItem()
     {
         this.gameObject.SetActive(true);
     }

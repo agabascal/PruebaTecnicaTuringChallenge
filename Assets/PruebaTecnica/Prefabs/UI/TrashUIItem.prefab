@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 3346993743722311670}
   - component: {fileID: 8252105191166944619}
   - component: {fileID: 8582966080490183600}
-  - component: {fileID: 4925973641918813990}
+  - component: {fileID: 2027563563666631731}
   m_Layer: 5
   m_Name: TrashUIItem
   m_TagString: Untagged
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4925973641918813990
+--- !u!114 &2027563563666631731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -634,12 +634,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6894040986934156267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb2a668a9ae5fdf4ea281c9099b30c5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e0366affc8e19049b9fc39c8914be78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsPanel: {fileID: 6640563115571180416}
-  useButton: {fileID: 0}
-  discardButton: {fileID: 5370392913509143941}
 --- !u!1 &7088356565530442288
 GameObject:
   m_ObjectHideFlags: 0
