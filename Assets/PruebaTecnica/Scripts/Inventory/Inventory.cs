@@ -18,8 +18,6 @@ public class Inventory: MonoBehaviour
         else
         {
             Instance = this;
-
-            DontDestroyOnLoad(gameObject);
         }
 
     }
@@ -38,8 +36,10 @@ public class Inventory: MonoBehaviour
         if (slotIndex < items.Count)
         {
             GameObject item = items[slotIndex];
+            item.GetComponent<InventoryItem>().UseItem();
             Debug.Log("Used Object: " + item.name);
             items.RemoveAt(slotIndex);
+            UpdateInventoryUI();
         }
     }
 
@@ -53,7 +53,7 @@ public class Inventory: MonoBehaviour
             }
             else
             {
-                inventorySlotsUI[i].GetComponent<Image>().color = Color.white;
+                inventorySlotsUI[i].GetComponent<Image>().color = Color.grey;
             }
         }
     }

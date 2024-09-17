@@ -18,13 +18,13 @@ public class Health : MonoBehaviour
     private void OnEnable()
     {
         Potion.Grabbed += OnPotionUsed;
-        Grenade.GrenadeGrabbed += OnGrenadeGrabbed;
+        Grenade.GrenadeUsed += OnGrenadeGrabbed;
     }
 
     private void OnDisable()
     {
         Potion.Grabbed -= OnPotionUsed;
-        Grenade.GrenadeGrabbed -= OnGrenadeGrabbed;
+        Grenade.GrenadeUsed -= OnGrenadeGrabbed;
     }
 
     private void OnPotionUsed(float healAmount)
@@ -41,7 +41,6 @@ public class Health : MonoBehaviour
 
     private void UpdateHealthUI(bool instant = false)
     {
-        Debug.Log(currentHealth);
         if (instant)
         {
             fillImage.fillAmount = currentHealth;

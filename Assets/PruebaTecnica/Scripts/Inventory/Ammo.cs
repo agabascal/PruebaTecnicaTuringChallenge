@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    public static event Action<int> AmmoUsed;
+    public static event Action<int> AmmoObtained;
 
     [SerializeField] private int ammoAmount = 2;
 
-    public void OnAmmoUsed()
+    public void OnAmmoObtained()
     {
-        AmmoUsed?.Invoke(ammoAmount);
+        AmmoObtained?.Invoke(ammoAmount);
     }
 }

@@ -9,7 +9,7 @@ public class Potion : MonoBehaviour
 
     public void OnPotionUsed()
     {
-        Debug.Log("Potion Grabbed " + healAmount);
+        Debug.Log("Potion Used, healed for: " + healAmount);
         Grabbed?.Invoke(healAmount);
     }
 }

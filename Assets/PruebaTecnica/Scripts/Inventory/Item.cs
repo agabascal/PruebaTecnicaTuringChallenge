@@ -6,6 +6,7 @@ public class InventoryItem : MonoBehaviour
 {
     public UnityEvent ItemUsed;
     [SerializeField] private Color itemColor;
+    [SerializeField] private Sprite itemSprite;
 
     public Color ItemColor => itemColor;
 
@@ -31,5 +32,6 @@ public class InventoryItem : MonoBehaviour
     public void UseItem()
     {
         ItemUsed?.Invoke();
+        this.gameObject.SetActive(true);
     }
 }

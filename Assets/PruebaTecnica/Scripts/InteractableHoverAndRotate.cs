@@ -23,6 +23,7 @@ public class InteractableHoverAndRotate : MonoBehaviour
     {
         interactable.selectEntered.AddListener(OnSelectEnter);
         interactable.selectExited.AddListener(OnSelectExit);
+        StartAnimation();
     }
 
     private void OnDisable()

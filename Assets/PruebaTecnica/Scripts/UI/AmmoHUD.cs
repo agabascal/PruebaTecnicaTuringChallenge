@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class AmmoHUD : MonoBehaviour
 {
@@ -16,15 +17,17 @@ public class AmmoHUD : MonoBehaviour
 
     private void OnEnable()
     {
-        Ammo.AmmoUsed += IncreaseAmmo;
+        Ammo.AmmoObtained += UpdateAmmo;
+        Grenade.DecreaseAmmo += UpdateAmmo;
     }
 
     private void OnDisable()
     {
-        Ammo.AmmoUsed -= IncreaseAmmo;
+        Ammo.AmmoObtained -= UpdateAmmo;
+        Grenade.DecreaseAmmo -= UpdateAmmo;
     }
 
-    private void IncreaseAmmo(int ammo)
+    private void UpdateAmmo(int ammo)
     {
         currentAmmo += ammo;
         currentAmmo = Mathf.Clamp(currentAmmo, 0, 10);
