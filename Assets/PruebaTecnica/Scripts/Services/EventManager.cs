@@ -1,4 +1,8 @@
 using System;
+
+/// <summary>
+/// Event bus that triggers the events following an observer pattern
+/// </summary>
 public static class EventManager
 {
     public static Action<float> OnDamageTaken;
