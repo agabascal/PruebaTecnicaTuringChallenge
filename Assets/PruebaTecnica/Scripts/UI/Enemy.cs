@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
-
     [SerializeField] private ParticleSystem healPSystem;
     [SerializeField] private ParticleSystem damagePSystem;
 
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
         {
             damagePSystem?.gameObject.SetActive(true);
             damagePSystem?.Play();
+            Jump();
         }
     }
 
@@ -34,5 +35,11 @@ public class Enemy : MonoBehaviour
             healPSystem.gameObject.SetActive(true);
             healPSystem.Play();
         }
+    }
+
+    private void Jump()
+    {
+        var randomJumpValue = new Vector3(Random.Range(-5,5),0,Random.Range(-5,5));
+        transform.DOJump(transform.position + randomJumpValue, 3f, 1 , 1f).SetEase(Ease.OutQuad);
     }
 }
