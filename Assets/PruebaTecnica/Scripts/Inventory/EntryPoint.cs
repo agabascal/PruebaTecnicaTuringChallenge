@@ -13,6 +13,10 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private Grenade grenade;
     [SerializeField] private Inventory inventory;
 
+    [SerializeField] private Item grenadeItem;
+    [SerializeField] private Item potionItem;
+    [SerializeField] private Item ammoItem;
+
     [SerializeField] private XRGrabInteractable grenadeInteractable;
     [SerializeField] private XRGrabInteractable potionInteractable;
     [SerializeField] private XRGrabInteractable ammoInteractable;
@@ -21,22 +25,33 @@ public class EntryPoint : MonoBehaviour
     private ItemCommand usablePotionItem;
     private ItemCommand usableAmmoItem;
 
+    private ItemHandling handleGrenade;
+    private ItemHandling handlePotion;
+    private ItemHandling handleAmmo;
+
     private void Awake()
     {
         Initialize();
     }
 
+    private void OnDestroy()
+    {
+        handleGrenade.Dispose();
+        handleAmmo.Dispose();
+        handlePotion.Dispose();
+    }
+
     public void Initialize()
     {
-        usableGrenadeItem = new ItemCommand(new GrenadeUsageCommand(grenade, ammoHUD));
-        usablePotionItem = new ItemCommand(new PotionUsageCommand(potion));
-        usableAmmoItem = new ItemCommand(new AmmoUsageCommand(ammo));
+        usableGrenadeItem = new ItemCommand(new GrenadeUsageCommand(grenade, ammoHUD), grenadeItem);
+        usablePotionItem = new ItemCommand(new PotionUsageCommand(potion), potionItem);
+        usableAmmoItem = new ItemCommand(new AmmoUsageCommand(ammo), ammoItem);
 
-        var handleGrenade = new ItemHandling(grenadeInteractable, usableGrenadeItem, inventory);
+        handleGrenade = new ItemHandling(grenadeInteractable, usableGrenadeItem, inventory);
         handleGrenade.Initialize();
-        var handlePotion = new ItemHandling(potionInteractable, usablePotionItem, inventory);
+        handlePotion = new ItemHandling(potionInteractable, usablePotionItem, inventory);
         handlePotion.Initialize();
-        var handleAmmo = new ItemHandling(ammoInteractable, usableAmmoItem, inventory);
+        handleAmmo = new ItemHandling(ammoInteractable, usableAmmoItem, inventory);
         handleAmmo.Initialize();
     }
 }

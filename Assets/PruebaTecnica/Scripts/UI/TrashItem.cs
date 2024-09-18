@@ -2,18 +2,16 @@
 
 public class TrashItem : MonoBehaviour, IInventoryItem
 {
-    [SerializeField] private Sprite trashSprite;
     [SerializeField] private AudioClip trashSFX;
 
-    private AudioSource audioSource;
-    public Sprite ItemSprite => trashSprite;
-    public AudioClip ItemSFX => trashSFX;
+    private Item item;
+    public Sprite ItemSprite => item.ItemSprite;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = trashSFX;
+        item = GetComponent<Item>();
     }
+
     public void UseItem()
     {
         Debug.Log("Cannot use trash.");
@@ -22,7 +20,21 @@ public class TrashItem : MonoBehaviour, IInventoryItem
     public void RemoveItem()
     {
         Debug.Log("Trash removed.");
-        audioSource.Play();
-        Destroy(gameObject, 2f);
+        SFXManager.Instance.PlayClip(trashSFX);
     }
 }
+
+public class TrashUsageCommand : IItemUsageCommand
+{
+    private readonly TrashItem trash;
+
+    public TrashUsageCommand()
+    {
+    }
+
+    public void Execute()
+    {
+
+    }
+}
+

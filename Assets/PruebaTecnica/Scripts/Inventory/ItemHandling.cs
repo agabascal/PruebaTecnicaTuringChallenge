@@ -1,7 +1,4 @@
 ﻿using UnityEngine.XR.Interaction.Toolkit;
-/// <summary>
-/// 
-/// </summary>
 public class ItemHandling
 {
     private readonly XRGrabInteractable grabInteractable;
@@ -29,14 +26,12 @@ public class ItemHandling
 
     private void OnXRInteractableSelected(SelectEnterEventArgs _)
     {
-        grabInteractable.gameObject.SetActive(false);
-        // inventory.AddToInventory(itemWithCommandPattern);
+        grabInteractable.gameObject.SetActive(!inventory.CanAddToInventory);
+        inventory.AddToInventory(itemCommand);
     }
 
     private void OnItemUsed()
     {
         grabInteractable.gameObject.SetActive(true);
-        // inventory.Remove(itemWithCommandPattern);
-        // inventory.AddTrash();
     }
 }

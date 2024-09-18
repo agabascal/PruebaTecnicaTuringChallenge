@@ -297,6 +297,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e641a90d8bf7d408567f18ccf9f85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &711147382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2284154198486559622, guid: ca505c12c01ea994e921e8ee6571712b, type: 3}
+  m_PrefabInstance: {fileID: 1227137067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &711147385 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7726961958300459927, guid: ca505c12c01ea994e921e8ee6571712b, type: 3}
@@ -421,6 +432,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6850b12c505f14dab6c7f815e6acef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1285038503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7161784180043477452, guid: e1197535f4e15c0448673c528256695f, type: 3}
+  m_PrefabInstance: {fileID: 931053623068594919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1285038506 stripped
@@ -909,6 +931,9 @@ MonoBehaviour:
   potion: {fileID: 2037066949}
   grenade: {fileID: 711147381}
   inventory: {fileID: 2861237413537058995}
+  grenadeItem: {fileID: 711147382}
+  potionItem: {fileID: 2037066950}
+  ammoItem: {fileID: 1285038503}
   grenadeInteractable: {fileID: 711147385}
   potionInteractable: {fileID: 2037066953}
   ammoInteractable: {fileID: 1285038506}
@@ -1081,6 +1106,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f459c9072adc214987fe8ef341245b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2037066950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4393017022796152893, guid: 891855cf59d08854e9bea9f3204e29cf, type: 3}
+  m_PrefabInstance: {fileID: 1401424169937698277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2037066953 stripped
@@ -1569,10 +1605,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1708419224028006140, guid: 357f31aa8a91e1a4fb2916f57d1cc6c3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1856121996197936582, guid: 357f31aa8a91e1a4fb2916f57d1cc6c3, type: 3}
       propertyPath: m_Name
       value: Enemy

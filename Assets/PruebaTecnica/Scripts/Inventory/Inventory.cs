@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -10,8 +11,10 @@ public class Inventory : MonoBehaviour
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private AudioClip inventoryFullSFX;
 
-    private List<IInventoryItem> items = new List<IInventoryItem>();
+    [SerializeReference] private List<ItemCommand> items = new List<ItemCommand>();
     public static Inventory Instance { get; private set; }
+
+    public bool CanAddToInventory => items.Count < inventorySlotsUI.Count;
 
     private void Awake()
     {
@@ -30,16 +33,15 @@ public class Inventory : MonoBehaviour
 
     private void InitializeInventorySlots()
     {
-        inventorySlotsUI = new List<UIItem>();
-        inventorySlotsUI.AddRange(itemImageContainer.GetComponentsInChildren<UIItem>());
+        inventorySlotsUI = itemImageContainer.GetComponentsInChildren<UIItem>().ToList();
     }
 
-    public void AddToInventory(IInventoryItem item)
+    public void AddToInventory(ItemCommand item)
     {
-        if (items.Count < inventorySlotsUI.Count && !items.Contains(item))
+        if (CanAddToInventory && !items.Contains(item))
         {
             items.Add(item);
-            item.gameObject.SetActive(false);
+            inventorySlotsUI[items.IndexOf(item)].SetupItemAsTrash(false);
             SFXManager.Instance.PlayClip(pickupSFX);
             UpdateInventoryUI();
         }
@@ -49,34 +51,43 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void UseItem(int slotIndex)
+    public void UseItem(int slot)
     {
-        if (slotIndex < items.Count)
+        var item = items[slot];
+        if (item != null)
         {
-            IInventoryItem item = items[slotIndex];
-            item.UseItem();
+            item.Use();
             Debug.Log("Used Object: " + item.GetType().Name);
-            CreateTrashInSlot(slotIndex);
+
+            CreateTrashInSlot(slot);
         }
     }
 
     private void CreateTrashInSlot(int slotIndex)
     {
-        var trashItem = Instantiate(trashPrefab).GetComponent<IInventoryItem>();
+        var trashInstance = Instantiate(trashPrefab).GetComponent<Item>();
+        var trashItem = new ItemCommand(new TrashUsageCommand(), trashInstance);
         items[slotIndex] = trashItem;
-        UpdateInventoryUI();
         inventorySlotsUI[slotIndex].SetupItemAsTrash(true);
+        UpdateInventoryUI();
     }
 
     public void RemoveItem(int slotIndex)
     {
-        if (slotIndex < items.Count)
+        var item = items[slotIndex];
+        if (item != null)
         {
-            IInventoryItem item = items[slotIndex];
-            item.RemoveItem();
+            item.Remove();
+            items.Remove(item);
             Debug.Log("Removed Object: " + item.GetType().Name);
-            items.RemoveAt(slotIndex);
             UpdateInventoryUI();
+            if (slotIndex + 1 < inventorySlotsUI.Count)
+            {
+                if (inventorySlotsUI[slotIndex].IsTrash && !inventorySlotsUI[slotIndex + 1].IsTrash)
+                {
+                    inventorySlotsUI[slotIndex].SetupItemAsTrash(false);
+                }
+            }
         }
     }
 
@@ -86,27 +97,26 @@ public class Inventory : MonoBehaviour
         {
             if (i < items.Count)
             {
-                UpdateSlot(i, items[i]);
+                UpdateSlot(inventorySlotsUI[i], items[i].Item);
             }
             else
             {
-                ClearSlot(i);
+                ClearSlot(inventorySlotsUI[i]);
             }
         }
     }
 
-    private void UpdateSlot(int slotIndex, IInventoryItem item)
+    private void UpdateSlot(UIItem slotUI, IInventoryItem item)
     {
-        var slotUI = inventorySlotsUI[slotIndex];
         slotUI.GetComponent<Image>().sprite = item.ItemSprite;
         slotUI.GetComponent<Button>().interactable = true;
-        slotUI.SetupItemAsTrash(item is TrashItem);
     }
 
-    private void ClearSlot(int slotIndex)
+    private void ClearSlot(UIItem slotUI)
     {
-        var slotUI = inventorySlotsUI[slotIndex];
         slotUI.GetComponent<Image>().sprite = null;
         slotUI.GetComponent<Button>().interactable = false;
     }
+
 }
+

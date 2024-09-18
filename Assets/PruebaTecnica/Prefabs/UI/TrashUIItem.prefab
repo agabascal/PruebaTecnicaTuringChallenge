@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 8582966080490183600}
   - component: {fileID: 2027563563666631731}
   - component: {fileID: 4614542304328817061}
+  - component: {fileID: 8880663273629491972}
   m_Layer: 5
   m_Name: TrashUIItem
   m_TagString: Untagged
@@ -712,6 +713,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8880663273629491972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894040986934156267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c522b29ad5d8446b6acf49d43da909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 21300000, guid: 4a935479046d3a242a49337264be4171, type: 3}
 --- !u!1 &7088356565530442288
 GameObject:
   m_ObjectHideFlags: 0
