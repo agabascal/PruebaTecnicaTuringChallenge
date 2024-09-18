@@ -5,9 +5,22 @@ public class Ammo : MonoBehaviour
     [SerializeField] private int ammoAmount = 2;
     [SerializeField] private AudioClip sfx;
 
-    public void OnAmmoObtained()
+    public int Amount => ammoAmount;
+    public AudioClip Sfx => sfx;
+}
+
+public class AmmoUsageCommand : IItemUsageCommand
+{
+    private readonly Ammo ammo;
+
+    public AmmoUsageCommand(Ammo ammo)
     {
-        EventManager.OnAmmoChanged(ammoAmount);
-        SFXManager.Instance.PlayClip(sfx);
+        this.ammo = ammo;
+    }
+    public void Execute()
+    {
+        EventManager.IncreaseAmmo(ammo.Amount);
+        SFXManager.Instance.PlayClip(ammo.Sfx);
+
     }
 }
