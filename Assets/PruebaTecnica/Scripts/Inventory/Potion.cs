@@ -7,11 +7,6 @@ public class Potion : MonoBehaviour
 
     public float HealAmount => healAmount; 
     public AudioClip Sfx => sfx; 
-
-    public void OnPotionUsed()
-    {
-        SFXManager.Instance.PlayClip(sfx);
-    }
 }
 
 public class PotionUsageCommand : IItemUsageCommand

@@ -1,10 +1,10 @@
 using UnityEngine;
 using TMPro;
-using System;
 
 public class AmmoHUD : MonoBehaviour
 {
     [SerializeField] private int startingAmmo;
+    [SerializeField] private int maxAmmo;
     [SerializeField] private TMP_Text ammoText;
 
     private int currentAmmo;
@@ -30,12 +30,12 @@ public class AmmoHUD : MonoBehaviour
     private void UpdateAmmo(int ammo)
     {
         currentAmmo += ammo;
-        currentAmmo = Mathf.Clamp(currentAmmo, 0, 10);
+        currentAmmo = Mathf.Clamp(currentAmmo, 0, maxAmmo);
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        ammoText.SetText("Ammo: " + currentAmmo +"/" + "10");
+        ammoText.SetText("Grenades: " + currentAmmo +"/" + "3");
     }
 }
