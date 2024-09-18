@@ -10,8 +10,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject trashPrefab;
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private AudioClip inventoryFullSFX;
+    [SerializeField] private AudioClip discardSFX;
 
-    [SerializeReference] private List<ItemCommand> items = new List<ItemCommand>();
+    private List<ItemCommand> items = new List<ItemCommand>();
     public static Inventory Instance { get; private set; }
 
     public bool CanAddToInventory => items.Count < inventorySlotsUI.Count;
@@ -88,6 +89,7 @@ public class Inventory : MonoBehaviour
                     inventorySlotsUI[slotIndex].SetupItemAsTrash(false);
                 }
             }
+            SFXManager.Instance.PlayClip(discardSFX);
         }
     }
 

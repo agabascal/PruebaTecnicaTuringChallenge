@@ -1,6 +1,5 @@
 ﻿using UnityEngine.Events;
 
-[System.Serializable]
 public class ItemCommand
 {
     public UnityEvent ItemUsed = new();

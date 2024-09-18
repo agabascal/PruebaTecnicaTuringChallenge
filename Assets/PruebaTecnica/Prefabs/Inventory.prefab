@@ -1033,6 +1033,11 @@ MonoBehaviour:
   trashPrefab: {fileID: 6894040986934156267, guid: 33d002f4d7bfdf9489852783078bd284, type: 3}
   pickupSFX: {fileID: 8300000, guid: 611b4eee39a924140b1306451e696765, type: 3}
   inventoryFullSFX: {fileID: 8300000, guid: e3cb8570e4b2e5a4587f3d9e9a565636, type: 3}
+  discardSFX: {fileID: 8300000, guid: 0e259d07af3183b48b0372484f7bccd1, type: 3}
+  items: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2376291853567687486
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,6 @@
 
 public class TrashItem : MonoBehaviour, IInventoryItem
 {
-    [SerializeField] private AudioClip trashSFX;
 
     private Item item;
     public Sprite ItemSprite => item.ItemSprite;
@@ -20,7 +19,6 @@ public class TrashItem : MonoBehaviour, IInventoryItem
     public void RemoveItem()
     {
         Debug.Log("Trash removed.");
-        SFXManager.Instance.PlayClip(trashSFX);
     }
 }
 
